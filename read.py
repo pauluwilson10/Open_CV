@@ -1,0 +1,18 @@
+import cv2 as cv
+#Reading image
+'''
+img=cv.imread('photos/cat.jpg')
+cv.imshow('Cat',img)
+cv.waitKey(4)
+'''
+#Reading video
+capture=cv.VideoCapture('videos/dog.mp4')
+while True:
+    isTrue,frame=capture.read()
+
+    cv.imshow('Video',frame)
+
+    if cv.waitKey(20) & 0xFF==ord('d'):
+        break
+capture.release()
+cv.destroyAllWindows()
